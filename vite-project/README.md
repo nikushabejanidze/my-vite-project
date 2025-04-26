@@ -1,12 +1,59 @@
-# React + Vite
+## პროექტის ჩამოწერა და გაშვება
+პროექტის გასაშვებად უნდა ჩამოტვირთოთ git რეპო,
+უნდა შეხვიდეთ ფოლდერში და cmd-ში გაუშვათ ეს ბრძანებები:
+- პირველი ბრძანება ემსახურება პროექტის ფოლდერში შესვლას
+- მეორე ბრძანება ემსახურება package.json-ში მოთავსებული მოდულების დაყენებას
+- მესამე ბრძანება ემსახურება პროექტის გაშვებას dev რეჟიმში
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```cmd
+cd 1-fundamentals
+npm install 
+npm run dev
+```
 
-Currently, two official plugins are available:
+### რა კრიტერიუმებს უნდა აკმაყოფილებდეს კომპონენტი:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- იწყებოდეს ასომთავრულეად
+- უნდა აბრუნებდეს html-ს ერთი მშობელი ელემენტით (ან ფრაგმენტით <> რომელიც არ ქმნის ახალ კვანძებს DOM ხე-ში)
+- უნდა დავიცვათ JSX წესები 
 
-## Expanding the ESLint configuration
+### JSX წესები
+- camelCase ატრიბუტები
+- ატრიბუტი className class-ის ნაცვლად
+- ატრიბუტი htmlFor for-ის ნაცვლად
+- ყველა ელემენტი უნდა იყოს დახურული, მათ შორის void ელემენტებიც 
+- JS კოდის შეტანა შეგვიძლია ფიგურულ ფრჩხილებში - '{}'
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+#### ხაზისშიდა inline გასტილვა
+- ამისთვის გამოიყენება style პროპი
+- {} ფიგურული ფრჩხილებით გადავდივართ JS გარემოში
+- ამ გარემოში ვამატებთ object-ს და ვამატებთ css property და valueb-ს key-value პრინციპით.
+
+მაგალითი:
+```jsx
+    <h4 style={{color: "red", backgroundColor: "yellow"}}>
+        Hello
+    </h4>
+```
+
+### prop-ები (Properties)
+
+Prop-ები React-ში კომპონენტებს შორის მონაცემების გადაცემის ძირითადი საშუალებაა. ისინი ფუნქციის პარამეტრებივით მუშაობენ და კომპონენტებს საშუალებას აძლევენ, მიიღონ მონაცემები მშობელი კომპონენტიდან.
+
+#### Prop - ძირითადი მახასიათებლები:
+- props-ის მნიშვნელობები შვილობილ კომპონენტში არ უნდა შეიცვალოს.
+- ისინი მხოლოდ მშობელმა კომპონენტმა უნდა განსაზღვროს.
+- გამოიყენება სტრინგების, რიცხვების, ფუნქციების და ობიექტების გადაცემისთვის.
+
+მაგალითად:
+
+```jsx
+const Greeting = (props) => {
+  return <h1>გამარჯობა, {props.name}!</h1>;
+};
+
+const App = () => {
+  return <Greeting name="ნიკა" />;
+};
+```
+ამ კოდში name="ნიკა" მნიშვნელობა მშობელმა კომპონენტმა (App) გადასცა შვილობილ Greeting კომპონენტს props-ის სახით.
