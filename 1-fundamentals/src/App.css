@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background-color: #3498db;
+  color: white;
+  padding: 16px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #ddd;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+main {
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.dashboard button {
+  padding: 8px 16px;
+  background-color: #2ecc71;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dashboard button:hover {
+  background-color: #27ae60;
+}
+
+.post {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post p {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.post-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.post-controls button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.post-controls .like {
+  background-color: #3498db;
+}
+
+.post-controls .like:hover {
+  background-color: #2980b9;
+}
+
+.post-controls .dislike {
+  background-color: #e74c3c;
+}
+
+.post-controls .dislike:hover {
+  background-color: #c0392b;
+}
+
+.post-controls .delete {
+  margin-left: auto;
+  background-color: #7f8c8d;
+}
+
+.post-controls .delete:hover {
+  background-color: #636e72;
+}
+
+.no-posts {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+  font-size: 18px;
+}
