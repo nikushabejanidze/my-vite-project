@@ -1,13 +1,14 @@
-// src/App.jsx
-import ThemeToggle from "./ThemeToggle";
-import CharacterCounter from "./CharacterCounter";
+import React from "react";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div>
-      <ThemeToggle />
-      <CharacterCounter />
-    </div>
+    <>
+      <Header />
+      <main className="p-6">
+        <h2 className="text-2xl font-semibold">მთავარი გვერდი</h2>
+      </main>
+    </>
   );
 }
 
